@@ -1,0 +1,31 @@
+<header class="row">
+	<div class="three columns">        
+		<h1 id="page_heading"><a href="<%= root_url %>"><%= enki_config[:title] %></a></h1>
+	</div>
+	<div class="nine columns">
+		<nav>
+        	<h2>Pages</h2>
+	        <ul>
+	          <% page_links_for_navigation.each do |link| -%>
+	            <li><%= link_to(link.name, link.url) %></li>
+	          <% end -%>
+	        </ul>
+        	<% unless category_links_for_navigation.empty? -%>
+         	 <h2>Categories</h2>
+	          <ul>
+	            <% category_links_for_navigation.each do |link| -%>
+	              <li><%= link_to(link.name, link.url) %></li>
+	            <% end -%>
+	          </ul>
+        	<% end -%>
+	        <form method="get" id="sform" action="http://www.google.com/search">
+	          <div>
+	            <h2><label for="q">Search</label></h2>
+
+	            <input type="text" id="q" value="" name="q">
+	            <input type="hidden" name="sitesearch" value="<%= enki_config[:url] %>">
+	          </div>
+	        </form>
+		</nav>
+	</div>
+</header>
