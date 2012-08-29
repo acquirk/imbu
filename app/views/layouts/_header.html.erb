@@ -1,27 +1,21 @@
 <header class="row">
 	<div class="three columns">        
-		<h1 id="page_heading"><a href="<%= root_url %>"><%= enki_config[:title] %></a></h1>
+		<h1 class="title"><a href="<%= root_url %>"><%= enki_config[:title] %></a></h1>
 	</div>
 	<div class="nine columns">
 		<nav>
-        	<h2>Pages</h2>
-	        <ul>
-	          <% page_links_for_navigation.each do |link| -%>
-	            <li><%= link_to(link.name, link.url) %></li>
-	          <% end -%>
-	        </ul>
-        	<% unless category_links_for_navigation.empty? -%>
-         	 <h2>Categories</h2>
-	          <ul>
-	            <% category_links_for_navigation.each do |link| -%>
-	              <li><%= link_to(link.name, link.url) %></li>
-	            <% end -%>
-	          </ul>
-        	<% end -%>
+        	<ul>
+		        <li><%= nav_link_to("Dashboard", admin_root_path,       :accesskey => '1') %></li>
+		        <li><%= nav_link_to("Posts",     admin_posts_path,      :accesskey => '2') %> <%= nav_link_to("(+)", new_admin_post_path, :accesskey => 'n') %></li>
+		        <li><%= nav_link_to("Pages",     admin_pages_path,      :accesskey => '3') %> <%= nav_link_to("(+)", new_admin_page_path, :accesskey => 'p') %></li>
+		        <li><%= nav_link_to("Actions",   admin_undo_items_path, :accesskey => '5') %></li>
+		        <li><%= nav_link_to("Health",    admin_health_path,     :accesskey => '6') %></li>
+		        <li class="separator">&nbsp;</li>
+		        <li><%= link_to("Logout", admin_session_path, :accesskey => 'l', :method => :delete) %></li>
+		    </ul>
 	        <form method="get" id="sform" action="http://www.google.com/search">
 	          <div>
 	            <h2><label for="q">Search</label></h2>
-
 	            <input type="text" id="q" value="" name="q">
 	            <input type="hidden" name="sitesearch" value="<%= enki_config[:url] %>">
 	          </div>

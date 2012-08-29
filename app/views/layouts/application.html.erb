@@ -11,16 +11,14 @@
   <%= render 'layouts/shim' %>
 </head>
 <body>
-  <div class="row" id="page_container">
+  <div id="header" class="row">
     <%= render 'layouts/header' %>
-      
-    <div id="main">
+  </div>
+  <div id="content" class="row">
       <%= yield %>
-    </div>
-
-      <%= render 'layouts/footer' %>
-
-    </div>
+  </div>
+  <div id="footer" class="row">
+    <%= render 'layouts/footer' %>
   </div>
 </body>
 </html>

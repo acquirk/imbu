@@ -11,6 +11,9 @@
  *= require_self
  *= require formtastic
  *= require humanmsg
+ *= require foundation
+ *= require login
+ *= require custom  
  */
 
 #nav {
