@@ -6,7 +6,7 @@
 :: Variables
 :: Shared Styles
 :: FullScreen Styles
-:: Page Name 2
+:: Footer Styles
 */
 
 /* -----------------------------------------
@@ -20,6 +20,7 @@
 ----------------------------------------- */
 
 $black: #000;
+$yellow: #f2ce6d;
 
 /* -----------------------------------------
 	Shared Styles
@@ -27,13 +28,13 @@ $black: #000;
 
 body {
 	background: #fefcea;
-	background: -moz-radial-gradient(center, ellipse cover,  #fefcea 15%, #f2ce6d 100%);
-	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(15%,#fefcea), color-stop(100%,#f2ce6d));
-	background: -webkit-radial-gradient(center, ellipse cover,  #fefcea 15%,#f2ce6d 100%);
-	background: -o-radial-gradient(center, ellipse cover,  #fefcea 15%,#f2ce6d 100%);
-	background: -ms-radial-gradient(center, ellipse cover,  #fefcea 15%,#f2ce6d 100%);
-	background: radial-gradient(ellipse at center,  #fefcea 15%,#f2ce6d 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#f2ce6d',GradientType=1 );
+	background: -moz-radial-gradient(center, ellipse cover,  #fefcea 15%, $yellow 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(15%,#fefcea), color-stop(100%,$yellow));
+	background: -webkit-radial-gradient(center, ellipse cover,  #fefcea 15%,$yellow 100%);
+	background: -o-radial-gradient(center, ellipse cover,  #fefcea 15%,$yellow 100%);
+	background: -ms-radial-gradient(center, ellipse cover,  #fefcea 15%,$yellow 100%);
+	background: radial-gradient(ellipse at center,  #fefcea 15%,$yellow 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='$yellow',GradientType=1 );
 }
 header.row {
 	margin-top: 33px;
@@ -71,6 +72,7 @@ h4.title {
 	margin-right:auto;
 	margin-left:auto;
 }
+
 /* -----------------------------------------
    FullScreen Styles
 ----------------------------------------- */
@@ -102,7 +104,38 @@ h4.title {
 	opacity:0.9;
 }
 /* -----------------------------------------
-   Page Name 2
+   Footer Styles
 ----------------------------------------- */
 
+footer {
+	padding: 0 0 33px 0;
+}
+nav {
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  display:inline;
+  background-color: #222222;
+}
 
+nav ul {
+  list-style-type: none;
+  display:inline;
+  margin: 10px;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+nav a {
+  color: #eeeeee;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav a.current {
+  border-bottom: solid 3px #eeeeee;
+}

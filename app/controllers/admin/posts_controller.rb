@@ -17,7 +17,7 @@ class Admin::PostsController < Admin::BaseController
     if @post.save
       respond_to do |format|
         format.html {
-          flash[:notice] = "Created post '#{@post.title}'"
+          flash[:notice] = "Saved '#{@post.title}'"
           redirect_to(:action => 'show', :id => @post)
         }
       end

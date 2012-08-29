@@ -110,3 +110,6 @@ html, body {
 	margin-right: 200px;
 	height: inherit;
 	}
+.humanMsg .undo-link {
+  display: none;
+}

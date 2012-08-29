@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title><%= enki_config[:title] %> - Admin</title>
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title><%= html_title yield(:page_title) %></title>
   <%= csrf_meta_tag %>
+  <!-- Included JS Files -->
   <%= javascript_include_tag 'admin' %>
-  <%= stylesheet_link_tag 'admin' %>
+  <!-- Included CSS Files -->
+  <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag 'application' %>
+  <%= open_id_delegation_link_tags(enki_config[:open_id_delegation, :server], enki_config[:open_id_delegation, :delegate]) if enki_config[:open_id_delegation] %>
   <%= yield(:head) %>
   <%= render 'layouts/shim' %>
   <% if flash[:notice] -%>
@@ -15,16 +26,13 @@
       })
     <% end -%>
   <% end -%>
+
 </head>
-<body>
-  <div id="header" class="row">
-    <%= render 'layouts/header' %>
-  </div>
-  <div id="content" class="row">
+<body onLoad="document.forms.mainText.textArea.focus()">
+  <%= render 'layouts/header' %>
+  <div class="row">
       <%= yield %>
   </div>
-  <div id="footer" class="row">
-    <%= render 'layouts/footer' %>
-  </div>
+  <%= render 'layouts/footer' %>
 </body>
 </html>
