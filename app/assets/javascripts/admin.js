@@ -10,10 +10,4 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
-//= require jquery_ujs
-//= require jquery.livequery
-//= require jquery.form
-//= require jquery.easing.1.3
-//= require humanmsg
-//= require_tree ./admin
+//= require_tree .

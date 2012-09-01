@@ -28,11 +28,18 @@
   <% end -%>
 
 </head>
-<body onLoad="document.forms.mainText.textArea.focus()">
+<body onLoad="document.forms.new_post.post_body.focus()">
   <%= render 'layouts/header' %>
   <div class="row">
       <%= yield %>
   </div>
   <%= render 'layouts/footer' %>
+  <script type="text/javascript">
+    function enterFullScreen(){
+      var elem = document.getElementById("newPost");
+      elem.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+      new_post.post_body.focus();
+    }
+  </script>
 </body>
 </html>

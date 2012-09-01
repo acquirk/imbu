@@ -29,5 +29,12 @@
   <div id="content" class="row">
       <%= yield %>
   </div>
+  <script type="text/javascript">
+    function enterFullScreen(){
+      var elem = document.getElementById("fullText");
+      elem.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+      mainText.textArea.focus();
+    }
+  </script>
 </body>
 </html>

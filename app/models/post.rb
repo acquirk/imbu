@@ -124,4 +124,8 @@ class Post < ActiveRecord::Base
     value = value.join(", ") if value.respond_to?(:join)
     super(value)
   end
+
+  # This should probably be in a User model
+  USER_DAILY_WORD_GOAL = 200
+
 end

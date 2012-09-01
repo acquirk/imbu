@@ -1,4 +1,4 @@
-class Admin::HealthController < Admin::BaseController
+class Admin::HelpController < Admin::BaseController
   before_filter :require_login
   verify :method => 'post',
          :only   => 'generate_exception',

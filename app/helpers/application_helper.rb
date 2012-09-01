@@ -17,4 +17,5 @@ module ApplicationHelper
       'base'   => error.last
     }[error.first.to_s]
   end
+
 end

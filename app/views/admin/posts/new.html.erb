@@ -1,8 +1,10 @@
-<h1>New post</h1>
-
-<%= semantic_form_for([:admin, @post]) do |form| -%>
-  <%= render :partial => 'form', :locals => {:form => form} -%>
-  <%= form.actions do -%>
-    <%= form.action :submit, :as => :button, :class => 'button'  -%>
-  <% end -%>
-<% end -%>
+<div class="twelve columns" id="newPost">
+	<%= semantic_form_for([:admin, @post]) do |form| -%>
+	  	<%= render :partial => 'form', :locals => {:form => form} -%>
+		<ul class="button-group even three-up radius">
+			<li><a class="button radius alert" onclick="enterFullScreen()">Focus</a></li>
+			<li><%= form.actions do -%><%= form.action :submit, :as => :button %><% end -%></li>
+			<li><a href="#" class="button radius success">Publish</a></li>
+		</ul>
+	<% end -%>
+</div>

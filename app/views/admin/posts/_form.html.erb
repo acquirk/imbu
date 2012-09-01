@@ -1,5 +1,9 @@
-<%= form.inputs do -%>
-  <%= form.input :body, :hint => "<a href='http://textile.thresholdstate.com/'>Textile enabled</a>. Use Ctrl+E to switch between preview and edit mode.".html_safe -%>
-  <%= form.input :title -%>
-  <%= form.input :tag_list, :as => 'string', :required => false, :hint => 'Comma separated: fiction, journal&hellip;'.html_safe -%>
-<% end -%>
+<%= form.inputs do %>
+	<p><%= Post::USER_DAILY_WORD_GOAL %> words minimum today!</p>
+
+	<%= form.input :body, :placeholder => "Get to typin!".html_safe %>
+	<div id="barbox"><div id="bar"></div></div><div id="count"><%= Post::USER_DAILY_WORD_GOAL %></div></div>
+
+  	<span class="fieldLabel">Title</span>
+  	<%= form.input :title, :placeholder => "A Tale of Two Cities".html_safe %>
+<% end %>
