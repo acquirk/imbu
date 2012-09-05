@@ -13,8 +13,10 @@
   <%= csrf_meta_tag %>
   <!-- Included JS Files -->
   <%= javascript_include_tag 'admin' %>
-  <!-- Included CSS Files -->
+  <!-- Included Font CSS Files -->
   <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Quattrocento' rel='stylesheet' type='text/css'>
+  <!-- Included CSS Files -->
   <%= stylesheet_link_tag 'application' %>
   <%= open_id_delegation_link_tags(enki_config[:open_id_delegation, :server], enki_config[:open_id_delegation, :delegate]) if enki_config[:open_id_delegation] %>
   <%= yield(:head) %>

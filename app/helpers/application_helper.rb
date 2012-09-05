@@ -18,4 +18,16 @@ module ApplicationHelper
     }[error.first.to_s]
   end
 
+  def random_prompt
+    prompts = [
+      "Well here's a little story I'd like to tell, about three fine brothers you know so well.", 
+      "It started way back in history, with my man MCA, and me, Mike D...", 
+      "Another random quote",
+      "5", 
+      "elements"
+    ]
+    random_prompt = prompts.sort_by{rand}[3]
+    random_prompt.to_s
+  end
+
 end

@@ -1,9 +1,10 @@
 <%= form.inputs do %>
 	<p><%= Post::USER_DAILY_WORD_GOAL %> words minimum today!</p>
 
-	<%= form.input :body, :placeholder => "Get to typin!".html_safe %>
-	<div id="barbox"><div id="bar"></div></div><div id="count"><%= Post::USER_DAILY_WORD_GOAL %></div></div>
+	<%= form.input :body, :placeholder => "Well here's a little story I'd like to tell, about three fine brothers you know so well...".html_safe %>
+
+	<span class="counter right"></span>
 
   	<span class="fieldLabel">Title</span>
-  	<%= form.input :title, :placeholder => "A Tale of Two Cities".html_safe %>
+  	<%= form.input :title, :placeholder => @random_prompt %>
 <% end %>
